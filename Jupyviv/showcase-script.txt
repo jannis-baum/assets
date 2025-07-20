@@ -1,0 +1,55 @@
+# Jupyviv showcase script
+# - setup: kitty terminal + zen browser 1/2 split
+# - run with RunShowcase from https://github.com/jannis-baum/showcase.spoon
+
+execute: hs.application.get("kitty"):activate()
+
+# start recording
+key: cmd-shift 5
+delay: 0.3
+key: return
+delay: 0.3
+
+# open notebook & start jupyviv
+delay: 0.5
+type: nvim showcase.ipynb
+delay: 0.5
+key: return
+delay: 0.5
+type: :JupyvivStart
+delay: 0.7
+key: return
+delay: 1
+
+# go back to kitty
+execute: hs.application.get("kitty"):activate()
+delay: 0.1
+
+# run first cell
+type: :17
+key: return
+delay: 0.5
+type: zz:JupyvivRunHere
+delay: 0.5
+key: return
+delay: 2.5
+
+# run second cell
+type: Gzz:JupyvivRunHere
+delay: 0.5
+key: return
+delay: 1
+
+# edit cell
+type: cc
+delay: 0.3
+type: _ = iris["sepal_length"].hist()
+delay: 0.3
+key: escape
+type: :JupyvivRunHere
+delay: 0.5
+key: return
+delay: 2
+
+# stop recording
+key: cmd-ctrl escape

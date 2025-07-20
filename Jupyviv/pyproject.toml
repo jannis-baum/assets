@@ -1,0 +1,12 @@
+[project]
+name = "jupyviv-assets"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=6.29.5",
+    "jupyviv",
+    "seaborn>=0.13.2",
+]
+
+[tool.uv.sources]
+jupyviv = { git = "https://github.com/jannis-baum/Jupyviv.git" }
